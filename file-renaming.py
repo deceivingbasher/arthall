@@ -62,10 +62,12 @@ def file_rename(files, path):
                 rename(file,new)
         except IndexError:
             print('Invalid File Format detected')
+            continue
         except InvalidNumber:
             print("This file name, {}, has a number that returns a non-alpha character during conversion".format(file))
         except:
-            return None
+            print('Unknown error on {}'.format(file))
+            continue
 
 def main():
     if len(argv) == 1:
